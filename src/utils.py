@@ -11,3 +11,11 @@ def read_word_integer(filename):
             command, value = line.split()
             data.append([command, int(value)])
     return data
+
+
+def read_chars(filename):
+    data = []
+    with open(filename) as f:
+        for line in f.readlines():
+            data.append([char for char in line.strip()])
+    return data
