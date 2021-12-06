@@ -19,3 +19,15 @@ def read_chars(filename):
         for line in f.readlines():
             data.append([char for char in line.strip()])
     return data
+
+
+def read_bingo(filename):
+    boards = []
+    with open(filename) as f:
+        numbers = [int(num) for num in f.readline().split(',')]
+        while f.readline():
+            board = []
+            for i in range(5):
+                board.append([int(num) for num in f.readline().strip().replace("  ", " ").split(" ")])
+            boards.append(board)
+    return numbers, boards
