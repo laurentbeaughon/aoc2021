@@ -31,3 +31,12 @@ def read_bingo(filename):
                 board.append([int(num) for num in f.readline().strip().replace("  ", " ").split(" ")])
             boards.append(board)
     return numbers, boards
+
+
+def read_vents(filename):
+    with open(filename) as f:
+        data = []
+        for line in f.readlines():
+            a, b, c, d = [int(i) for x in line.split(' -> ') for i in x.split(',')]
+            data.append([a, b, c, d])
+    return data
