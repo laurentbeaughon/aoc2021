@@ -45,3 +45,11 @@ def read_vents(filename):
 def read_comma_separated_int(filename):
     with open(filename) as f:
         return [int(val) for val in f.readline().split(',')]
+
+
+def read_seven_segment(filename):
+    with open(filename) as f:
+        data = []
+        for line in f.readlines():
+            data.append([part.split() for part in line . split(' | ')])
+    return data
