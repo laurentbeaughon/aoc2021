@@ -40,3 +40,8 @@ def read_vents(filename):
             a, b, c, d = [int(i) for x in line.split(' -> ') for i in x.split(',')]
             data.append([a, b, c, d])
     return data
+
+
+def read_comma_separated_int(filename):
+    with open(filename) as f:
+        return [int(val) for val in f.readline().split(',')]
